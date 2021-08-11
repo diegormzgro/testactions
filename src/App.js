@@ -15,9 +15,9 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Maldita sea funciona chingadera de mierda 
+          Learn React
         </a>
-        <h2>Nada perra madre funciona</h2>
+        
       </header>
     </div>
   );
