@@ -1,14 +1,23 @@
-name: Shell Commands
+name: CI
 
-on: [push]
+on:
+  pull_request:
+    branches: [develop]
 
 jobs:
-  run-sell-command:
+  build:
    runs-on: ubuntu-latest
    steps:
-     - name: echo a string
-       run: echo "Hellow world"
-     - name: multiline script
-       run: |
-         node -v
-         npm -v
+     - uses: actions/checkout@v2
+     - name: Use NodeJS
+       uses: actions/setup-node@v1
+       with:
+          node-version: "12.x"
+     - run: npm ci
+     - run: npm test -- --coverage
+       env:
+         CI: true
+
+
+#cuanto daria por contarles nuestro amor
+#blablacar
